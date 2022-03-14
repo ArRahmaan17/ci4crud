@@ -143,7 +143,7 @@
         function edit($id) {
           $.ajax({
             url: "<?= base_url('Pegawai/edit') ?>/" + $id,
-            type: "get",
+            type: "GET",
             success: function(hasil) {
               var $hasilobj = $.parseJSON(hasil);
               if ($hasilobj.id != null) {
@@ -195,7 +195,7 @@
                 $('.error').hide();
                 $('.sukses').show();
                 $('.sukses').html($hasilobj.pesan);
-                window.location.href = "<?= current_url()?>";
+                window.location.href = "<?= current_url() ?>";
                 bersihkan();
               } else {
                 $('.suskses').hide();
